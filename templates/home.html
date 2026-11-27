@@ -1,0 +1,2544 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HOMEFIX | Home Appliance Repair & Service</title>
+
+ <style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#07111d;
+    color:#fff;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    width:100%;
+    background:#081522;
+    border-bottom:1px solid #24364a;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1400px;
+    margin:auto;
+    padding:15px 35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-icon{
+    width:52px;
+    height:52px;
+
+    border:3px solid #ffc928;
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:27px;
+    color:#ffc928;
+}
+
+.logo-text h1{
+    font-size:29px;
+    letter-spacing:1px;
+}
+
+.logo-text h1 span{
+    color:#ffc928;
+}
+
+.logo-text p{
+    font-size:11px;
+    color:#b8c2cf;
+    letter-spacing:2px;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:#e8edf3;
+    font-size:16px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#ffc928;
+}
+
+.book-btn{
+    background:linear-gradient(
+        135deg,
+        #ffd84d,
+        #f5aa00
+    );
+
+    color:#111;
+
+    padding:14px 25px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:620px;
+
+    max-width:1400px;
+    margin:auto;
+
+    padding:70px 45px;
+
+    display:flex;
+    align-items:center;
+
+    gap:50px;
+}
+
+.hero-left{
+    flex:1;
+}
+
+.tag{
+    display:inline-block;
+
+    border:1px solid #d6a900;
+
+    border-radius:25px;
+
+    padding:9px 18px;
+
+    color:#ffc928;
+
+    font-size:14px;
+
+    margin-bottom:22px;
+}
+
+.hero h2{
+    font-size:clamp(42px,5vw,70px);
+
+    line-height:1.02;
+
+    margin-bottom:25px;
+}
+
+.hero h2 span{
+    color:#ffc928;
+}
+
+.hero-text{
+    color:#bdc8d5;
+
+    font-size:19px;
+
+    line-height:1.7;
+
+    max-width:650px;
+}
+
+.hero-buttons{
+    margin-top:32px;
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.call-btn{
+    background:linear-gradient(
+        135deg,
+        #ffd84d,
+        #f2a900
+    );
+
+    color:#111;
+
+    padding:16px 28px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+.call-btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(255,201,40,.25);
+}
+
+.whatsapp-btn{
+    background:#16c967;
+
+    color:#fff;
+
+    padding:16px 28px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+.whatsapp-btn:hover{
+    background:#11b85c;
+
+    transform:translateY(-3px);
+}
+
+
+/* =====================================================
+   TRUST
+===================================================== */
+
+.trust-row{
+    margin-top:42px;
+
+    display:flex;
+
+    gap:35px;
+
+    flex-wrap:wrap;
+}
+
+.trust{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.trust-icon{
+    width:45px;
+    height:45px;
+
+    border:2px solid #ffc928;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#ffc928;
+
+    font-size:20px;
+}
+
+.trust small{
+    color:#d4dce5;
+}
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-right{
+    flex:1;
+
+    width:50%;
+
+    height:480px;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    border:2px solid #f5c542;
+
+    background:#07111d;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+}
+
+.hero-right img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.services{
+    padding:80px 30px;
+
+    background:#091725;
+}
+
+.section-title{
+    text-align:center;
+
+    margin-bottom:50px;
+}
+
+.section-title small{
+    color:#ffc928;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+}
+
+.section-title h2{
+    font-size:45px;
+
+    margin-top:12px;
+}
+
+.section-title h2 span{
+    color:#ffc928;
+}
+
+.section-title p{
+    margin-top:12px;
+
+    color:#aeb9c6;
+
+    font-size:17px;
+}
+
+.cards{
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.card{
+    background:
+        linear-gradient(
+            180deg,
+            #101f2d,
+            #07111b
+        );
+
+    border:1px solid #385066;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    border-color:#ffc928;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.35);
+}
+
+.card-image{
+    height:250px;
+
+    overflow:hidden;
+
+    background:#182736;
+}
+
+.card-image img{
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+}
+
+.card:hover .card-image img{
+    transform:scale(1.05);
+}
+
+.card-content{
+    padding:28px;
+}
+
+.card-content h3{
+    font-size:27px;
+
+    margin-bottom:7px;
+}
+
+.card-content h4{
+    color:#ffc928;
+
+    font-size:17px;
+
+    margin-bottom:20px;
+}
+
+.card-content ul{
+    list-style:none;
+
+    line-height:2;
+
+    color:#d1dae3;
+}
+
+.card-content li::before{
+    content:"✓";
+
+    color:#ffc928;
+
+    font-weight:bold;
+
+    margin-right:10px;
+}
+
+.learn-btn{
+    display:inline-block;
+
+    margin-top:22px;
+
+    background:#ffc928;
+
+    color:#111;
+
+    padding:13px 25px;
+
+    border-radius:25px;
+
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   SERVICE AREA
+===================================================== */
+
+.service-area{
+    padding:50px 30px 20px;
+
+    background:#07111d;
+}
+
+.service-area-title{
+    text-align:center;
+
+    max-width:850px;
+
+    margin:0 auto 45px;
+}
+
+.service-area-title small{
+    color:#ffc928;
+
+    letter-spacing:4px;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+.service-area-title h2{
+    font-size:45px;
+
+    margin-top:12px;
+}
+
+.service-area-title h2 span{
+    color:#ffc928;
+}
+
+.service-area-title p{
+    color:#aeb9c6;
+
+    font-size:17px;
+
+    line-height:1.7;
+
+    margin-top:15px;
+}
+
+.service-area-container{
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1.5fr 1fr;
+
+    gap:30px;
+
+    align-items:start;
+}
+
+
+/* =====================================================
+   GOOGLE MAP
+===================================================== */
+
+.map-box{
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    border:2px solid #ffc928;
+
+    background:#102235;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+}
+
+.google-map{
+
+    width:100%;
+
+    height:500px;
+
+    display:block;
+
+    border:0;
+}
+
+
+/* =====================================================
+   MAP CHARGE
+===================================================== */
+
+.map-charge{
+
+    min-height:100px;
+
+    padding:20px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101f2d,
+            #08131f
+        );
+
+    border-top:1px solid #ffc928;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.charge-icon{
+
+    width:50px;
+    height:50px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:rgba(255,201,40,.12);
+
+    border:1px solid #ffc928;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:23px;
+}
+
+.map-charge strong{
+
+    display:block;
+
+    color:#ffc928;
+
+    font-size:18px;
+
+    margin-bottom:5px;
+}
+
+.map-charge small{
+
+    display:block;
+
+    color:#aeb9c6;
+
+    font-size:13px;
+
+    line-height:1.5;
+}
+
+
+/* =====================================================
+   SERVICE AREA INFO
+===================================================== */
+
+.service-area-info{
+
+    padding:38px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102235,
+            #08131f
+        );
+
+    border:1px solid #394d61;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.area-icon{
+
+    width:65px;
+    height:65px;
+
+    border-radius:50%;
+
+    background:#ffc928;
+
+    color:#07111d;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    margin-bottom:22px;
+}
+
+.service-area-info h3{
+
+    font-size:31px;
+
+    margin-bottom:15px;
+}
+
+.service-area-info h3 span{
+
+    color:#ffc928;
+}
+
+.service-area-info > p{
+
+    color:#aeb9c6;
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   40 KM FREE SERVICE
+===================================================== */
+
+.coverage-badge{
+
+    margin:25px 0;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:rgba(255,201,40,.08);
+
+    border:1px solid rgba(255,201,40,.35);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+}
+
+.coverage-badge-icon{
+
+    font-size:32px;
+}
+
+.coverage-badge strong{
+
+    display:block;
+
+    color:#ffc928;
+
+    font-size:21px;
+
+    margin-bottom:5px;
+}
+
+.coverage-badge small{
+
+    color:#c7d0db;
+
+    line-height:1.5;
+}
+
+
+/* =====================================================
+   COVERAGE LIST
+===================================================== */
+
+.coverage-list{
+
+    margin-top:5px;
+}
+
+.coverage-list div{
+
+    margin:13px 0;
+
+    color:#d9e1e9;
+
+    font-size:15px;
+
+    line-height:1.5;
+}
+
+.coverage-list span{
+
+    color:#ffc928;
+
+    font-weight:bold;
+
+    margin-right:10px;
+}
+
+
+/* =====================================================
+   TAMIL NADU SERVICE
+===================================================== */
+
+.tn-service{
+
+    margin-top:25px;
+
+    padding:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102235,
+            #08131f
+        );
+
+    border:1px solid #394d61;
+
+    border-radius:20px;
+}
+
+.tn-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.tn-title > span{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:#ffc928;
+
+    color:#07111d;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:24px;
+}
+
+.tn-title h3{
+
+    color:#ffc928;
+
+    font-size:22px;
+
+    margin-bottom:5px;
+}
+
+.tn-title p{
+
+    color:#aeb9c6;
+
+    font-size:14px;
+}
+
+.city-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+.city-list span{
+
+    padding:9px 15px;
+
+    border-radius:20px;
+
+    background:#07111d;
+
+    border:1px solid #405469;
+
+    color:#dce4ec;
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+.city-list span:hover{
+
+    border-color:#ffc928;
+
+    color:#ffc928;
+
+    transform:translateY(-2px);
+}
+
+.tn-note{
+
+    margin-top:20px;
+
+    padding-top:15px;
+
+    border-top:1px solid #304356;
+
+    color:#aeb9c6;
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+/* TAMIL NADU MAP IMAGE */
+
+.tamilnadu-map-image {
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    object-fit: contain;
+    display: block;
+    border: 2px solid #ffc928;
+    border-radius: 22px;
+    background: #07111d;
+    box-shadow: 0 20px 50px rgba(0,0,0,.3);
+}
+
+@media(max-width:950px) {
+    .tamilnadu-map-image {
+        min-height: auto;
+        height: auto;
+    }
+}
+
+
+/* =====================================================
+   END PART 1
+===================================================== */
+/* =====================================================
+   BOOKING
+===================================================== */
+
+.booking{
+    max-width:1250px;
+    margin:25px auto 80px;
+    padding:45px;
+
+    border:1px solid #394d61;
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101f2d,
+            #08131f
+        );
+}
+
+.booking h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.booking h2 span{
+    color:#ffc928;
+}
+
+.booking > p{
+    color:#aeb9c6;
+    margin-bottom:30px;
+}
+
+
+/* Django booking messages */
+.messages{
+    margin:0 0 22px;
+}
+.message{
+    padding:13px 16px;
+    border-radius:10px;
+    margin-bottom:10px;
+    font-size:14px;
+    line-height:1.5;
+}
+.message.success{
+    color:#b9f6ca;
+    background:rgba(22,201,103,.12);
+    border:1px solid #16c967;
+}
+.message.error{
+    color:#ffd0d0;
+    background:rgba(220,53,69,.12);
+    border:1px solid #dc3545;
+}
+.mobile-input-wrap{
+    display:flex;
+    align-items:stretch;
+    width:100%;
+}
+.mobile-prefix{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0 17px;
+    background:#263544;
+    border:1px solid #3b5064;
+    border-right:0;
+    border-radius:10px 0 0 10px;
+    color:#ffc928;
+    font-weight:bold;
+    white-space:nowrap;
+}
+.mobile-input-wrap input{
+    border-radius:0 10px 10px 0 !important;
+    min-width:0;
+}
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+
+    color:#dbe4ed;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:16px;
+
+    background:#07111c;
+
+    border:1px solid #3b5064;
+    color:#fff;
+
+    border-radius:10px;
+    outline:none;
+
+    font-size:15px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#ffc928;
+
+    box-shadow:
+        0 0 10px rgba(255,201,40,.20);
+}
+
+.form-group select option{
+    background:#07111c;
+    color:#fff;
+}
+
+.form-group textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.form-group input[type="date"],
+.form-group input[type="time"]{
+    color-scheme:dark;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+
+/* =====================================================
+   BOOKING BUTTONS
+===================================================== */
+
+.booking-actions{
+    display:flex;
+    gap:15px;
+
+    margin-top:20px;
+
+    flex-wrap:wrap;
+}
+
+.submit-btn{
+    border:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd84d,
+            #f5aa00
+        );
+
+    color:#111;
+
+    padding:16px 35px;
+
+    border-radius:30px;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.cancel-btn{
+    background:#263544;
+
+    color:#fff;
+
+    border:1px solid #506274;
+
+    padding:16px 35px;
+
+    border-radius:30px;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.cancel-btn:hover{
+    background:#3b4c5e;
+}
+
+
+/* =====================================================
+   WHY US
+===================================================== */
+
+.why-us{
+    background:#06101a;
+    padding:60px 30px;
+}
+
+.why-grid{
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+}
+
+.why-card{
+    text-align:center;
+
+    padding:25px;
+
+    border-right:1px solid #293b4d;
+}
+
+.why-card:last-child{
+    border-right:none;
+}
+
+.why-icon{
+    font-size:35px;
+
+    color:#ffc928;
+
+    margin-bottom:15px;
+}
+
+.why-card h3{
+    font-size:18px;
+
+    margin-bottom:8px;
+}
+
+.why-card p{
+    color:#9facba;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about{
+    padding:80px 30px;
+
+    background:#091725;
+}
+
+.about-content{
+    max-width:1100px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.about-content h2{
+    font-size:42px;
+
+    margin-bottom:20px;
+}
+
+.about-content h2 span{
+    color:#ffc928;
+}
+
+.about-content p{
+    color:#aeb9c6;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact{
+    padding:70px 30px;
+
+    text-align:center;
+}
+
+.contact h2{
+    font-size:42px;
+}
+
+.contact h2 span{
+    color:#ffc928;
+}
+
+.contact p{
+    color:#aeb9c6;
+
+    margin:15px 0 25px;
+}
+
+.contact-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#040b12;
+
+    border-top:1px solid #26394c;
+
+    padding:35px;
+}
+
+.footer-inner{
+    max-width:1300px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+footer p{
+    color:#8794a3;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:950px){
+
+    .navbar{
+        padding:15px 20px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+
+        padding:50px 20px;
+
+        gap:35px;
+    }
+
+    .hero-left{
+        width:100%;
+    }
+
+    .hero-right{
+        width:100%;
+
+        height:400px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+
+        max-width:550px;
+    }
+
+    .service-area-container{
+        grid-template-columns:1fr;
+    }
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .why-card{
+        border-right:none;
+
+        border-bottom:1px solid #293b4d;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+    .hero{
+        padding:40px 15px;
+    }
+
+    .hero-right{
+        height:300px;
+        min-height:300px;
+
+        border-radius:20px;
+    }
+
+    .hero h2{
+        font-size:43px;
+    }
+
+    .hero-text{
+        font-size:16px;
+    }
+
+    .trust-row{
+        gap:20px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .service-area{
+        padding:60px 15px;
+    }
+
+    .service-area-title h2{
+        font-size:32px;
+    }
+
+    .service-area-title p{
+        font-size:15px;
+    }
+
+    .google-map{
+        height:350px;
+    }
+
+    .service-area-info{
+        padding:28px;
+
+        border-radius:18px;
+    }
+
+    .service-area-info h3{
+        font-size:27px;
+    }
+
+    .booking{
+        margin:50px 15px;
+
+        padding:25px;
+    }
+
+    .booking h2{
+        font-size:30px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .booking-actions{
+        flex-direction:column;
+    }
+
+    .submit-btn,
+    .cancel-btn{
+        width:100%;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:12px 15px;
+    }
+
+    .logo-text h1{
+        font-size:22px;
+    }
+
+    .logo-icon{
+        width:42px;
+        height:42px;
+
+        font-size:21px;
+    }
+
+    .book-btn{
+        padding:10px 15px;
+
+        font-size:13px;
+    }
+
+    .hero h2{
+        font-size:38px;
+    }
+
+    .hero-right{
+        height:280px;
+    }
+
+    .call-btn,
+    .whatsapp-btn{
+        width:100%;
+
+        text-align:center;
+    }
+
+    .card-image{
+        height:230px;
+    }
+
+    .google-map{
+        height:300px;
+    }
+
+    .map-charge{
+        padding:16px;
+
+        align-items:flex-start;
+    }
+
+    .map-charge strong{
+        font-size:15px;
+    }
+
+    .map-charge small{
+        font-size:12px;
+    }
+
+    .charge-icon{
+        width:42px;
+        height:42px;
+
+        font-size:18px;
+    }
+
+    .tn-service{
+        padding:20px;
+    }
+
+    .tn-title h3{
+        font-size:18px;
+    }
+
+    .city-list span{
+        font-size:12px;
+
+        padding:8px 12px;
+    }
+
+    .contact h2,
+    .about-content h2{
+        font-size:32px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<nav class="navbar">
+
+<a href="#home" class="logo">
+
+<div class="logo-icon">⌂</div>
+
+<div class="logo-text">
+
+<h1>HOME<span>FIX</span></h1>
+
+<p>Your Home Our Care</p>
+
+</div>
+
+</a>
+
+
+<div class="nav-links">
+
+<a href="#home">Home</a>
+
+<a href="#services">Services</a>
+
+<a href="#service-area">Service Area</a>
+
+<a href="#about">About Us</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+
+<a href="#booking" class="book-btn">
+📅 Book a Service
+</a>
+
+</nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+<div class="hero-left">
+
+<div class="tag">
+⚡ FAST • RELIABLE • AFFORDABLE
+</div>
+
+<h2>
+
+Expert Appliance<br>
+
+Repair <span>& Service</span>
+
+</h2>
+
+
+<p class="hero-text">
+
+Professional home appliance repair and service for your everyday needs.
+
+Our experienced technicians provide reliable service at your doorstep.
+
+Service available across Tamil Nadu.
+
+<strong style="color:#ffc928;">
+
+Madurai – Up to 40 KM No Additional Service Charge.
+
+</strong>
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="tel:+918807747077"
+class="call-btn">
+
+📞 Call Now
+
+</a>
+
+
+<a
+href="https://wa.me/918807747077"
+class="whatsapp-btn"
+target="_blank"
+rel="noopener noreferrer">
+
+🟢 Chat on WhatsApp
+
+</a>
+
+</div>
+
+
+<div class="trust-row">
+
+<div class="trust">
+
+<div class="trust-icon">✓</div>
+
+<small>
+Trusted<br>
+Technicians
+</small>
+
+</div>
+
+
+<div class="trust">
+
+<div class="trust-icon">⚡</div>
+
+<small>
+Quick<br>
+Response
+</small>
+
+</div>
+
+
+<div class="trust">
+
+<div class="trust-icon">₹</div>
+
+<small>
+Affordable<br>
+Pricing
+</small>
+
+</div>
+
+
+<div class="trust">
+
+<div class="trust-icon">★</div>
+
+<small>
+Customer<br>
+Satisfaction
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hero-right">
+
+<img
+    src="{% static 'images/homefix-hero.jpeg' %}"
+    alt="HOMEFIX Appliance Service">
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="services" id="services">
+
+<div class="section-title">
+
+<small>OUR SERVICES</small>
+
+<h2>
+
+Expert Appliance
+
+<span>Repair & Service</span>
+
+</h2>
+
+<p>
+
+All Brand Service | Genuine Parts | Experienced Technicians
+
+</p>
+
+</div>
+
+
+<div class="cards">
+
+
+<!-- WASHING MACHINE -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="{% static 'images/washing machine.jpeg' %}"
+alt="Washing Machine Repair">
+
+</div>
+
+<div class="card-content">
+
+<h3>Washing Machine</h3>
+
+<h4>Repair & Service</h4>
+
+<ul>
+
+<li>All Brand Repair</li>
+
+<li>General Service</li>
+
+<li>Installation</li>
+
+<li>Door & Drum Repair</li>
+
+</ul>
+
+<a href="#booking" class="learn-btn">
+Book Now
+</a>
+
+</div>
+
+</div>
+
+
+<!-- REFRIGERATOR -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="{% static 'images/refrigerator(fridge).jpeg' %}"
+alt="Refrigerator Repair">
+
+</div>
+
+<div class="card-content">
+
+<h3>Refrigerator</h3>
+
+<h4>Repair & Service</h4>
+
+<ul>
+
+<li>All Brand Repair</li>
+
+<li>Cooling Problem</li>
+
+<li>Gas Charging</li>
+
+<li>Compressor Service</li>
+
+</ul>
+
+<a href="#booking" class="learn-btn">
+Book Now
+</a>
+
+</div>
+
+</div>
+
+
+<!-- AC -->
+
+<div class="card">
+
+<div class="card-image">
+
+<img
+src="{% static 'images/ac.jpeg' %}"
+alt="Air Conditioner Repair">
+
+</div>
+
+<div class="card-content">
+
+<h3>Air Conditioner</h3>
+
+<h4>Repair & Service</h4>
+
+<ul>
+
+<li>AC General Service</li>
+
+<li>Cooling Problem</li>
+
+<li>Gas Charging</li>
+
+<li>Installation</li>
+
+</ul>
+
+<a href="#booking" class="learn-btn">
+Book Now
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICE AREA
+===================================================== -->
+
+<section class="service-area" id="service-area">
+
+<div class="service-area-title">
+
+<small>OUR SERVICE AREA</small>
+
+<h2>
+
+Madurai &
+
+<span>All Tamil Nadu</span>
+
+</h2>
+
+<p>
+
+HOMEFIX provides doorstep home appliance repair and service
+across Tamil Nadu.
+
+Madurai customers within 40 KM have no additional service-area charge.
+
+</p>
+
+</div>
+
+
+<div class="service-area-container">
+
+
+<!-- LEFT SIDE -->
+
+<div>
+
+<div class="map-box">
+
+<iframe
+class="google-map"
+src="https://www.google.com/maps?q=Madurai,Tamil%20Nadu&output=embed"
+allowfullscreen
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+
+<div class="map-charge">
+
+<div class="charge-icon">
+📍
+</div>
+
+<div>
+
+<strong>
+Madurai – 40 KM FREE SERVICE AREA
+</strong>
+
+<small>
+
+Up to 40 KM from Madurai —
+No Additional Service-Area Charge.
+
+Above 40 KM — Additional Charges Applicable.
+
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ALL TAMIL NADU -->
+
+<div class="tn-service">
+
+<div class="tn-title">
+
+<span>📍</span>
+
+<div>
+
+<h3>All Over Tamil Nadu Available</h3>
+
+<p>
+Home Appliance Repair & Service
+</p>
+
+</div>
+
+</div>
+
+
+<div class="city-list">
+
+<span>Chennai</span>
+<span>Madurai</span>
+<span>Coimbatore</span>
+<span>Erode</span>
+<span>Tiruppur</span>
+<span>Salem</span>
+<span>Trichy</span>
+<span>Thanjavur</span>
+<span>Vellore</span>
+<span>Tirunelveli</span>
+<span>Thoothukudi</span>
+<span>Dindigul</span>
+<span>Karur</span>
+<span>Namakkal</span>
+<span>Virudhunagar</span>
+<span>Sivakasi</span>
+<span>Ramanathapuram</span>
+<span>Sivagangai</span>
+<span>Theni</span>
+<span>Dharmapuri</span>
+<span>Krishnagiri</span>
+<span>Kanchipuram</span>
+<span>Tiruvallur</span>
+<span>Cuddalore</span>
+<span>Villupuram</span>
+<span>Nagapattinam</span>
+<span>Mayiladuthurai</span>
+
+</div>
+
+
+<div class="tn-note">
+
+✓ Service available across Tamil Nadu
+
+<br>
+
+⚠ Additional charges may apply based on location.
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE -->
+
+<div class="service-area-info">
+
+<div class="area-icon">
+📍
+</div>
+
+
+<h3>
+
+Madurai
+
+<span>40 KM FREE</span>
+
+</h3>
+
+
+<p>
+
+Our main service area is Madurai.
+
+Customers within 40 KM of Madurai have no additional
+service-area charge.
+
+</p>
+
+
+<div class="coverage-badge">
+
+<div class="coverage-badge-icon">
+🎯
+</div>
+
+<div>
+
+<strong>
+40 KM FREE SERVICE AREA
+</strong>
+
+<small>
+Madurai & surrounding areas.
+</small>
+
+</div>
+
+</div>
+
+
+<div class="coverage-list">
+
+<div>
+<span>✓</span>
+Madurai City & Surrounding Areas
+</div>
+
+<div>
+<span>✓</span>
+Up to 40 KM — No Additional Service-Area Charge
+</div>
+
+<div>
+<span>⚠</span>
+Above 40 KM — Additional Charges Applicable
+</div>
+
+<div>
+<span>📍</span>
+All Over Tamil Nadu Service Available
+</div>
+
+<div>
+<span>🛠</span>
+Washing Machine • Refrigerator • AC
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     BOOKING
+===================================================== -->
+
+<section class="booking" id="booking">
+
+<h2>
+
+Book Your
+
+<span>Service</span>
+
+</h2>
+
+<p>
+Fill in your details and our HOMEFIX team will contact you.
+</p>
+
+
+{% if messages %}
+<div class="messages" role="status" aria-live="polite">
+    {% for message in messages %}
+    <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<form method="POST" action="{% url 'book_service' %}">
+
+{% csrf_token %}
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>Full Name</label>
+
+<input
+type="text"
+name="name"
+placeholder="Enter your name"
+autocomplete="name"
+oninput="capitalizeName(this)"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Mobile Number</label>
+
+<div class="mobile-input-wrap">
+    <span class="mobile-prefix">+91</span>
+    <input
+        type="tel"
+        name="mobile"
+        placeholder="10-digit mobile number"
+        inputmode="numeric"
+        autocomplete="tel-national"
+        maxlength="10"
+        minlength="10"
+        pattern="[6-9][0-9]{9}"
+        title="Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9"
+        oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,10)"
+        required>
+</div>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>Complete Address (including PIN Code)</label>
+
+<textarea
+    id="booking-address"
+    name="address"
+    placeholder="Door No / Street Name, Area, City, District\nPIN Code: 6-digit PIN"
+    rows="4"
+    required></textarea>
+<small class="form-hint">Enter your full address and add your 6-digit PIN Code on the last line (example: PIN Code: 625001).</small>
+<input type="hidden" id="booking-pincode" name="pincode" value="">
+
+</div>
+
+<div class="form-group">
+
+<label>Appliance</label>
+
+<select name="appliance" required>
+
+<option value="">
+Select Appliance
+</option>
+
+<option value="Washing Machine">
+Washing Machine
+</option>
+
+<option value="Refrigerator">
+Refrigerator
+</option>
+
+<option value="Air Conditioner">
+Air Conditioner
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Service</label>
+
+<select name="service" required>
+
+<option value="">
+Select Service
+</option>
+
+<option value="General Service">
+General Service
+</option>
+
+<option value="Repair">
+Repair
+</option>
+
+<option value="Installation">
+Installation
+</option>
+
+<option value="Gas Charging">
+Gas Charging
+</option>
+
+<option value="Compressor Service">
+Compressor Service
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Booking Date</label>
+
+<input
+type="date"
+name="preferred_date"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Preferred Time</label>
+
+<input
+type="time"
+name="preferred_time"
+required>
+
+</div>
+
+</div>
+
+
+<div class="booking-actions">
+
+<button
+type="submit"
+class="submit-btn">
+
+📅 Book Service
+
+</button>
+
+
+<button
+type="reset"
+class="cancel-btn">
+
+Clear Form
+
+</button>
+
+</div>
+
+</form>
+
+</section>
+
+
+<!-- =====================================================
+     WHY HOMEFIX
+===================================================== -->
+
+<section class="why-us">
+
+<div class="why-grid">
+
+
+<div class="why-card">
+
+<div class="why-icon">
+👨‍🔧
+</div>
+
+<h3>
+Trusted Technicians
+</h3>
+
+<p>
+Experienced appliance service technicians.
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="why-icon">
+⚡
+</div>
+
+<h3>
+Quick Response
+</h3>
+
+<p>
+Fast and convenient doorstep service.
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="why-icon">
+₹
+</div>
+
+<h3>
+Affordable Pricing
+</h3>
+
+<p>
+Transparent and affordable service pricing.
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="why-icon">
+★
+</div>
+
+<h3>
+Quality Service
+</h3>
+
+<p>
+Customer-focused appliance repair and service.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section class="about" id="about">
+
+<div class="about-content">
+
+<h2>
+
+About
+
+<span>HOMEFIX</span>
+
+</h2>
+
+
+<p>
+
+HOMEFIX provides professional home appliance repair,
+maintenance and installation services.
+
+We provide doorstep service for Washing Machines,
+Refrigerators and Air Conditioners.
+
+Our service is available in Madurai and across Tamil Nadu.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="contact" id="contact">
+
+<h2>
+
+Need Appliance
+
+<span>Service?</span>
+
+</h2>
+
+
+<p>
+
+Call HOMEFIX or contact us through WhatsApp.
+
+</p>
+
+
+<div class="contact-buttons">
+
+<a
+href="tel:+918807747077"
+class="call-btn">
+
+📞 Call HOMEFIX
+
+</a>
+
+
+<a
+href="https://wa.me/918807747077"
+class="whatsapp-btn"
+target="_blank"
+rel="noopener noreferrer">
+
+🟢 WhatsApp
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-inner">
+
+<p>
+© 2026 HOMEFIX. All Rights Reserved.
+</p>
+
+<p>
+Home Appliance Repair & Service | Tamil Nadu
+</p>
+
+</div>
+
+</footer>
+
+
+
+<script>
+function capitalizeName(input) {
+    input.value = input.value
+        .toLowerCase()
+        .replace(/(^|\\s)([a-z])/g, function(match, space, letter) {
+            return space + letter.toUpperCase();
+        });
+}
+</script>
+\n
+<script>
+// Extract the 6-digit PIN code from the end of the address and send it
+// separately to Django while keeping the booking form visually as one field.
+document.addEventListener("DOMContentLoaded", function () {
+    const bookingForm = document.querySelector("form[action=\"{% url 'book_service' %}\"]");
+    const addressField = document.getElementById("booking-address");
+    const pincodeField = document.getElementById("booking-pincode");
+
+    if (!bookingForm || !addressField || !pincodeField) return;
+
+    bookingForm.addEventListener("submit", function (event) {
+        const match = addressField.value.match(/(?:PIN\s*Code\s*[:\-]?\s*)?(\d{6})\s*$/i);
+        if (!match) {
+            event.preventDefault();
+            alert("Please include your 6-digit PIN Code at the end of your address. Example: PIN Code: 625001");
+            addressField.focus();
+            return;
+        }
+        pincodeField.value = match[1];
+    });
+});
+</script>
+</body>
+
+</html>

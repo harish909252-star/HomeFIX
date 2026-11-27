@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeFix Admin Dashboard</title>
+    <style>
+        *{box-sizing:border-box}
+        body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#172033}
+        .top{background:#111827;color:#fff;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+        .brand{font-size:22px;font-weight:800}.sub{font-size:12px;color:#cbd5e1}
+        .wrap{max-width:1400px;margin:auto;padding:22px}
+        .cards{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-bottom:22px}
+        .card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 4px 18px rgba(15,23,42,.07)}
+        .label{font-size:12px;color:#64748b}.num{font-size:28px;font-weight:800;margin-top:8px}
+        .tablebox{background:#fff;border-radius:14px;padding:18px;box-shadow:0 4px 18px rgba(15,23,42,.07);overflow:auto}
+        table{width:100%;border-collapse:collapse;min-width:900px}th,td{text-align:left;padding:12px;border-bottom:1px solid #e5e7eb;font-size:13px}th{background:#f8fafc}
+        .status{display:inline-block;padding:5px 10px;border-radius:20px;color:#fff;font-size:11px;font-weight:700}
+        .Pending{background:#f59e0b}.Confirmed{background:#2196f3}.Arrived{background:#8b5cf6}.Completed{background:#16a34a}.Cancelled{background:#dc2626}
+        a{color:inherit}
+        @media(max-width:1000px){.cards{grid-template-columns:repeat(3,1fr)}}
+        @media(max-width:600px){.wrap{padding:12px}.cards{grid-template-columns:repeat(2,1fr)}.top{padding:15px}.card{padding:14px}.num{font-size:23px}}
+    </style>
+</head>
+<body>
+    <header class="top">
+        <div><div class="brand">HomeFix Admin</div><div class="sub">Service Booking Dashboard</div></div>
+        <a href="{% url 'admin:index' %}">Django Admin →</a>
+    </header>
+    <main class="wrap">
+        <section class="cards">
+            <div class="card"><div class="label">TOTAL</div><div class="num">{{ counts.total }}</div></div>
+            <div class="card"><div class="label">PENDING</div><div class="num">{{ counts.pending }}</div></div>
+            <div class="card"><div class="label">CONFIRMED</div><div class="num">{{ counts.confirmed }}</div></div>
+            <div class="card"><div class="label">ARRIVED</div><div class="num">{{ counts.arrived }}</div></div>
+            <div class="card"><div class="label">COMPLETED</div><div class="num">{{ counts.completed }}</div></div>
+            <div class="card"><div class="label">CANCELLED</div><div class="num">{{ counts.cancelled }}</div></div>
+        </section>
+        <section class="tablebox">
+            <h2>Recent Bookings</h2>
+            <table>
+                <thead><tr><th>Name</th><th>Mobile</th><th>Appliance</th><th>Service</th><th>Date</th><th>Time</th><th>Status</th><th>Address</th></tr></thead>
+                <tbody>
+                {% for b in bookings %}
+                    <tr>
+                        <td>{{ b.name }}</td><td>{{ b.mobile_number }}</td><td>{{ b.appliance }}</td><td>{{ b.service }}</td>
+                        <td>{{ b.booking_date }}</td><td>{{ b.preferred_time }}</td><td><span class="status {{ b.status }}">{{ b.status }}</span></td><td>{{ b.address }}</td>
+                    </tr>
+                {% empty %}<tr><td colspan="8">No bookings found.</td></tr>{% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
