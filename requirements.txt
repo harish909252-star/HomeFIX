@@ -1,1 +1,4 @@
-Django==5.2.17\n# Optional WhatsApp integration:\n# twilio\n
+Django==5.2.17
+
+# Optional WhatsApp integration
+# twilio
