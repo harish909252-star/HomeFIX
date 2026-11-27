@@ -1,4 +1,6 @@
 Django==5.2.17
-
-# Optional WhatsApp integration
-# twilio
+gunicorn
+whitenoise
+dj-database-url
+psycopg[binary]
+twilio
